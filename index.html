@@ -103,7 +103,10 @@ ratingStars.forEach(star => {
     star.addEventListener("click", () => {
         const val = parseInt(star.dataset.value);
 
+        // Reset semua
         ratingStars.forEach(s => s.classList.remove("selected"));
+
+        // Tambahkan selected ke semua bintang <= yang diklik
         ratingStars.forEach(s => {
             if (parseInt(s.dataset.value) <= val) {
                 s.classList.add("selected");
@@ -113,6 +116,7 @@ ratingStars.forEach(star => {
         ratingInput.value = val;
     });
 });
+
 
 // Submit form
 form.addEventListener("submit", async (e) => {
@@ -166,6 +170,7 @@ document.getElementById("toggleMode").addEventListener("click", () => {
 
 </body>
 </html>
+
 
 
 
